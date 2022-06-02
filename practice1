@@ -1,0 +1,77 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+    
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        // PERSONAL GREETER
+        var keepPlaying = true;
+        var replay ="";
+        var greetings="";
+        int age =0;
+        var name ="";
+        
+        do{
+            Console.WriteLine ("WELCOME TO THE PERSONAL GREETER APP");
+            Console.WriteLine("input your name: ");
+            name = Console.ReadLine();
+            Console.WriteLine(" ");
+            Console.WriteLine("Hello! " + name + ", Welcome");
+            Console.WriteLine("How old are you");
+            age = int.Parse(Console.ReadLine());
+            Console.WriteLine("=================");
+            var surfixGreetings ="you are "+ age +" years old";
+            if(age <= 5){
+                greetings ="young hero";
+            }else if(age > 5 && age < 18){
+                greetings ="kiddo " + surfixGreetings;
+            }else if(age >= 18 && age < 35){
+                greetings ="Teenager " + surfixGreetings;
+            }else if (age >= 35){
+                greetings ="Boss " + surfixGreetings;
+            }
+        
+       
+        Console.WriteLine("Greate!");
+        Console.WriteLine("Hello " + greetings);
+         // calculate age to 100
+        int ageRemain = 100 - age;
+        
+        if(ageRemain  <= -1 ){
+            ageRemain = age - 100;
+            Console.WriteLine("Wow you are " + ageRemain + " years over 100 years");
+        }else{
+            Console.WriteLine("You have " + ageRemain + " years to attain 100 years");
+        }
+        Console.WriteLine("=================");
+        do{
+            Console.WriteLine("Do you want to replay: ");
+            replay = Console.ReadLine();
+            replay = replay.ToLower();
+            switch (replay){
+            case "y":
+                keepPlaying = true;
+                break;
+            case "yes":
+                keepPlaying = true;
+                break;
+            case "n":
+                keepPlaying = false;
+                break;
+            case "no":
+                keepPlaying = false;
+                break;
+            default:
+                replay ="invalid";
+                Console.WriteLine("Invalid Input");
+                break;
+        }
+        }while(replay == "invalid");
+        
+        }while(keepPlaying);
+        Console.WriteLine("Thanks for playing");
+    }
+}
